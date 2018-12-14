@@ -1,0 +1,61 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package Entidades;
+
+/**
+ *
+ * @author Dell Inspiron EPF
+ */
+public class CMostrarArticulo {
+     private String descripcion = new String();
+    private String modelo = new String();
+    private int cantidad = 0;
+    private float precio = 0;
+    private int importe = 0;
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public String getModelo() {
+        return modelo;
+    }
+
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+
+    public float getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(float precio) {
+        this.precio = precio;
+    }
+
+    public int getImporte() {
+        return importe;
+    }
+
+    public void setImporte(int importe) {
+        this.importe = importe;
+    }
+    
+    
+}

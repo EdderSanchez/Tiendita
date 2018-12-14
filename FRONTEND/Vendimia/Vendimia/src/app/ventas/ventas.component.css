@@ -1,0 +1,167 @@
+.nuevaventaestilo{
+    color:#f1f1f1;
+    background-color:#438EB9;
+    border: 1px solid #f1f1f1;
+    border-collapse: collapse;
+    padding: 10px;
+    text-align:center;
+    margin-left: 900px;
+    margin-top:15px ;
+}
+
+
+.botonestilo{
+    color:#f1f1f1;
+    background-color:#438EB9;
+    border-collapse: collapse;
+    padding: 8px;
+    text-align:center;
+}
+
+
+.ventaactiva{
+    color : #3B83BD;
+    margin-top:10px ;
+}
+
+.linea{
+    color : rgba(0, 0, 0, 0.692);
+    margin-top:10px ;
+}
+
+.bordeabajo{
+    color : rgba(131, 127, 127, 0.562);
+    margin-top:10px ;
+}
+
+.labelfolio{
+    margin-left: 1000px;
+    color : rgba(22, 163, 69, 0.692);
+    font-weight: bold;
+    
+}
+
+.labelfolioventa{
+    color : rgba(22, 163, 69, 0.692);
+    font-weight: bold;
+    
+}
+
+.labelenganche{
+    color:#000000;
+    background-color:rgba(99, 102, 104, 0.637);
+    border: 1px solid #f1f1f1;
+    border-collapse: collapse;
+    padding: 8px;
+    text-align:center;
+    margin-left: 1030px;
+}
+
+.labelbonificacion{
+    color:#000000;
+    background-color:rgba(99, 102, 104, 0.637);
+    border: 1px solid #f1f1f1;
+    border-collapse: collapse;
+    padding: 8px;
+    text-align:center;
+    margin-left: 945px;
+}
+
+.labeltotal{
+    color:#000000;
+    background-color:rgba(99, 102, 104, 0.637);
+    border: 1px solid #f1f1f1;
+    border-collapse: collapse;
+    padding: 8px;
+    text-align:center;
+    margin-left: 1061px;
+}
+
+.siguiente{
+    color:#f1f1f1;
+    background-color:rgb(39, 223, 100);
+    border: 1px solid #f1f1f1;
+    border-collapse: collapse;
+    padding: 10px;
+    text-align:center;
+    margin-left: 10px;
+}
+
+.agregar{
+    color:#f1f1f1;
+    background-color:rgba(42, 53, 46, 0.815);
+    border: 1px solid #f1f1f1;
+    border-collapse: collapse;
+    padding: 8px;
+    text-align:center;
+    width: 3%;
+    font-weight: bold;
+}
+
+
+.cancelar{
+    color:#f1f1f1;
+    background-color:rgb(39, 223, 100);
+    border: 1px solid #f1f1f1;
+    border-collapse: collapse;
+    padding: 10px;
+    text-align:center;
+    margin-left: 1100px;
+}
+
+.posicionabono{
+    margin-left: 220px;
+}
+
+.grabar{
+    color:#f1f1f1;
+    background-color:rgb(39, 223, 100);
+    border: 1px solid #f1f1f1;
+    border-collapse: collapse;
+    padding: 10px;
+    text-align:center;
+    margin-left: 10px;
+   
+}
+
+.cancelarabono{
+    color:#f1f1f1;
+    background-color:rgb(39, 223, 100);
+    border: 1px solid #f1f1f1;
+    border-collapse: collapse;
+    padding: 10px;
+    text-align:center;
+    margin-left: 750px;
+}
+
+
+td.articulos  {
+    text-align: center;
+    width: 200px;
+ }
+ th.articulos  {
+     width: 200px;
+     text-align:center;           
+ }
+ 
+ tr.articulos{
+    width:200px;
+    text-align:center;
+ }
+
+
+ .abonosmensuales{
+    color:#8f7494;
+    background-color:rgb(191, 162, 196);
+    padding: 5px;
+    text-align:center;
+    width:200px;
+ }    
+        
+.abonos{
+    background-color:rgba(238, 238, 238, 0.932);
+    padding: 5px;
+    text-align:center;
+    width:200px;
+    
+}

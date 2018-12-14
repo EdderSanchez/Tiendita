@@ -1,0 +1,138 @@
+<div *ngIf ="valor">
+    <div>
+        <button type="button" (click) = 'valor = false' class="nuevaventaestilo" >Nueva Venta</button>
+        <h1 class="ventaactiva">Ventas Activas</h1>
+        
+    </div>
+
+    <br><br>
+    <ag-grid-angular 
+        #gridOptionsVentas
+        style="width: 1335px; height: 400px;" 
+        class="ag-theme-balham"
+        [enableSorting]="true"
+        [enableFilter]="true"
+        [rowData]="rowData" 
+        [columnDefs]="columnDefs"
+        [suppressRowDrag] = "true"
+        >
+    </ag-grid-angular>
+</div>
+
+<div *ngIf ="!valor">
+        <div>
+            <br>
+            <label class="labelfolio">Folio Venta : </label>
+            <label class="labelfolioventa">{{folioventa}}</label>
+            <br><br>
+        
+            <label class="botonestilo">Cliente </label> &nbsp;&nbsp;&nbsp;
+            <input  [(ngModel)]="cliente" (change)="buscarcliente()"  type="text" class="form-control" maxlength="30" size="35" style="text-transform: uppercase ;height: 25px;" onkeyup="javascript:this.value=this.value.toUpperCase()"/>
+            &nbsp;&nbsp;&nbsp;
+            
+            <label *ngIf = "encontrocliente">RFC : </label>
+            <label *ngIf = "encontrocliente">{{rfc}}</label>
+
+            <br><br>
+            <hr class="ventaactiva"/>
+            <br>
+            <div *ngIf="!bEncontro">
+                <label class="botonestilo">Articulo </label> &nbsp;&nbsp;&nbsp;
+                <input [(ngModel)]="descripcion" maxlength="30" size="35"  type="text" style="text-transform: uppercase ;height: 25px;" onkeyup="javascript:this.value=this.value.toUpperCase()"/>&nbsp;&nbsp;
+
+                <button type="button" (click)="buscararticulo()" class = "agregar" > + </button><br><br>
+                <hr class="linea"/>
+        </div>
+  
+        <div>
+            <table>
+                <tr class="articulos">                                             
+                    <th class="articulos">Descripcion Articulo</th>
+                    <th class="articulos">Modelo</th>
+                    <th class="articulos">Cantidad</th>
+                    <th class="articulos">Precio</th>   
+                    <th class="articulos">Importe</th>
+                     
+                </tr>
+                <tr class="articulos" *ngIf="importe > 0">
+                    <td class="articulos">{{descripcion}}</td>
+                    <td class="articulos">{{modelo}}</td>
+                    <td class="articulos"><input  style="width: 30px ;" size = "3" [(ngModel)]="cantidad"   (change) = "mostrararticulo()" type="text" value={{cantidad}}/></td>
+                    <td class="articulos">{{precio}}</td>
+                    <td class="articulos">{{importe}}</td>               
+                </tr>  
+                
+            </table>
+              
+        </div>
+        
+        <div *ngIf="importe > 0">
+            <br>
+            <hr class="linea"/><br>
+            <label class="labelenganche">Enganche : </label>&nbsp;&nbsp;
+            <label>{{enganche}}</label>
+            <br><br>
+            <label class="labelbonificacion">Bonificacion Enganche : </label>&nbsp;&nbsp;
+            <label>{{bonificacionenganche}}</label>
+            <br><br>
+            <label class="labeltotal">Total : </label>&nbsp;&nbsp;
+            <label>{{total}}</label>
+    
+        </div>
+</div>
+   <div *ngIf ="!abono && bSiguiente">
+        <br>
+        
+        <button type="button" (click) = "cancelarventa()" class="cancelar" >Cancelar</button>
+        <button type="button" (click) = 'calcularabonos()' class="siguiente" >Siguiente</button>
+        <br> 
+   </div>
+   
+   <br>
+    <div *ngIf ="abono" class="posicionabono">
+        <div>
+                <table class="table venta" >
+                        <tr class="abonosmensuales">                                             
+                            <th class="abonosmensuales" colspan="5">ABONOS MENSUALES</th>
+                        </tr>
+                        <tr class="abonos">
+                            <td class="abonos">{{mesestres}} ABONOS DE </td>
+                            <td class="abonos">$ {{importeabonotres}}</td>
+                            <td class="abonos">TOTAL A PAGAR {{totalpagartres}}</td>
+                            <td class="abonos">SE AHORRA {{importeahorratres}}</td> 
+                            <td class="abonos"  style="width: 10px"><input name="radioabono" [(ngModel)]="radio" value="3" type="radio"/></td>                 
+                        </tr>  
+                        <tr>
+                            <td class="abonos">{{mesesseis}}  ABONOS DE </td>
+                            <td class="abonos">$ {{importeabonoseis}}</td>
+                            <td class="abonos">TOTAL A PAGAR  {{totalpagarseis}}</td>
+                            <td class="abonos">SE AHORRA {{importeahorraseis}}</td>   
+                            <td class="abonos"  style="width: 10px"><input [(ngModel)]="radio"  name="radioabono" value="6" type="radio"/></td>              
+                        </tr>  
+                        <tr>
+                            <td class="abonos">{{mesesnueve}}  ABONOS DE </td>
+                            <td class="abonos">$ {{importeabononueve}}</td>
+                            <td class="abonos">TOTAL A PAGAR  {{totalpagarnueve}}</td>
+                            <td class="abonos">SE AHORRA {{importeahorranueve}}</td> 
+                            <td class="abonos"  style="width: 10px"><input [(ngModel)]="radio" name="radioabono" value="9"  type="radio"/></td>               
+                        </tr>  
+                        <tr>
+                            <td class="abonos">{{mesesdoce}}  ABONOS DE </td>
+                            <td class="abonos">$ {{importeabonodoce}}</td>
+                            <td class="abonos">TOTAL A PAGAR  {{totalpagardoce}}</td>
+                            <td class="abonos">SE AHORRA {{importeahorradoce}}</td> 
+                            <td class="abonos"   style="width: 10px"><input name="radioabono" [(ngModel)]="radio" value="12" type="radio"/></td>               
+                        </tr>  
+                        
+                    </table>
+        </div>
+       <div>
+        <br>
+            <button type="button" (click)="cancelarventa()" class="cancelarabono" >Cancelar</button>
+            <button type="button" (click) = "grabarventa()" class="grabar" >Grabar</button>
+            <br>
+        </div>
+    
+    </div>
+    <br>
+</div>

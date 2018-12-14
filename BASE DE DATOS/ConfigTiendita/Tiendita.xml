@@ -1,0 +1,8 @@
+<config>
+	<database>
+		<ipservidor>localhost</ipservidor>
+		<basedatos>Tiendita</basedatos>
+		<usuario>postgres</usuario>
+		<password>barcelona18</password>
+	</database>
+</config>

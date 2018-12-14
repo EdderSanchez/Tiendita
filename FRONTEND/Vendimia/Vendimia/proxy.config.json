@@ -1,0 +1,7 @@
+{
+    "/WsVentas/*":{
+    "target":"http://localhost:8084",
+    "secure" : false,
+    "LogLevel":"Debug"    
+    }
+}
